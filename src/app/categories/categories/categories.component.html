@@ -1,0 +1,38 @@
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+      <mat-icon>category</mat-icon>
+      <span>Categoria</span>
+  </button>
+  <button mat-menu-item>
+      <mat-icon>category</mat-icon>
+      <span>Subcategoria</span>
+  </button>
+</mat-menu>
+
+<h2>Categorias</h2>
+
+<button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+    <span>Nova</span>
+  </button>
+
+  <table mat-table [dataSource]="categories" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let category"> {{category.id}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let category"> {{category.name}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
