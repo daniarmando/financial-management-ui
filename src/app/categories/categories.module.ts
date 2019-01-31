@@ -5,10 +5,14 @@ import { CommonModule } from '@angular/common';
 import { CategoriesComponent } from './categories/categories.component';
 import { MatMenuModule, MatIconModule, MatButtonModule, MatTableModule } from '@angular/material';
 import { CategoriesRoutingModule } from './categories-routing.module';
+import { RegisterCategoryComponent } from './register-category/register-category.component';
+import { RegisterSubcategoryComponent } from './register-subcategory/register-subcategory.component';
 
 @NgModule({
   declarations: [
-    CategoriesComponent
+    CategoriesComponent,
+    RegisterCategoryComponent,
+    RegisterSubcategoryComponent
   ],
   imports: [
     CommonModule,
